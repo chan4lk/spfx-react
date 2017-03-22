@@ -21,7 +21,7 @@ export default class RotatorWebPart extends React.Component<IRotatorProps, void>
         <Slider {...settings}>
           {this.props.items.map((item) => {
             return (
-              <div>
+              <div key={item.id} className="rotatorItem">
                 <div>{item.title}</div>
                 <img src={item.imagePath}  title={item.tooltip}/>
               </div>
