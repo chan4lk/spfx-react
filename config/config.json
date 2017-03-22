@@ -1,13 +1,16 @@
 {
   "entries": [
     {
-      "entry": "./lib/webparts/rotatorWebPart/RotatorWebPartWebPart.js",
-      "manifest": "./src/webparts/rotatorWebPart/RotatorWebPartWebPart.manifest.json",
-      "outputPath": "./dist/rotator-web-part.bundle.js"
+      "entry": "./lib/webparts/rotator/RotatorWebPart.js",
+      "manifest": "./src/webparts/rotator/RotatorWebPart.manifest.json",
+      "outputPath": "./dist/rotator.bundle.js"
     }
   ],
-  "externals": {},
+  "externals": {
+    "office-ui-fabric-react": "node_modules/office-ui-fabric-react/dist/office-ui-fabric-react.js",
+    "react-dom/server": "node_modules/react-dom/dist/react-dom-server.min.js"
+  },
   "localizedResources": {
-    "rotatorWebPartStrings": "webparts/rotatorWebPart/loc/{locale}.js"
+    "rotatorStrings": "webparts/rotator/loc/{locale}.js"
   }
 }

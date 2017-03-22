@@ -14,7 +14,8 @@
     "description": { "default": "List Item Rotator" },
     "officeFabricIconFontName": "Page",
     "properties": {
-      "description": "RotatorWebPart"
+      "caption": "News Item Rotator",
+      "contentType": "News"
     }
   }]
 }

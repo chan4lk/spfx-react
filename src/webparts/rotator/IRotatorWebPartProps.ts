@@ -1,3 +1,4 @@
 export interface IRotatorWebPartProps {
-  description: string;
+  contentType:string;
+  caption: string;
 }

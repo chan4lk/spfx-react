@@ -15,16 +15,24 @@
     "@types/react-addons-update": "0.14.14",
     "@types/react-dom": "0.14.18",
     "@types/webpack-env": ">=1.12.1 <1.14.0",
+    "lodash": "^4.17.4",
+    "office-ui-fabric-react": "^2.5.4",
     "react": "15.4.2",
-    "react-dom": "15.4.2"
+    "react-dom": "15.4.2",
+    "react-redux": "^5.0.3",
+    "react-slick": "^0.14.7",
+    "redux": "^3.6.0",
+    "redux-logger": "^2.10.2",
+    "slick-carousel": "^1.6.0"
   },
   "devDependencies": {
     "@microsoft/sp-build-web": "~1.0.0",
     "@microsoft/sp-module-interfaces": "~1.0.0",
     "@microsoft/sp-webpart-workbench": "~1.0.0",
-    "gulp": "~3.9.1",
     "@types/chai": ">=3.4.34 <3.6.0",
-    "@types/mocha": ">=2.2.33 <2.6.0"
+    "@types/mocha": ">=2.2.33 <2.6.0",
+    "@types/react-slick": "0.0.7",
+    "gulp": "~3.9.1"
   },
   "scripts": {
     "build": "gulp bundle",
