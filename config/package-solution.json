@@ -1,0 +1,10 @@
+{
+  "solution": {
+    "name": "vortex-web-parts-client-side-solution",
+    "id": "3f57c58a-2c8f-4a73-a2d6-ea765332f897",
+    "version": "1.0.0.0"
+  },
+  "paths": {
+    "zippedPackage": "solution/vortex-web-parts.sppkg"
+  }
+}

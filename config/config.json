@@ -1,0 +1,13 @@
+{
+  "entries": [
+    {
+      "entry": "./lib/webparts/rotatorWebPart/RotatorWebPartWebPart.js",
+      "manifest": "./src/webparts/rotatorWebPart/RotatorWebPartWebPart.manifest.json",
+      "outputPath": "./dist/rotator-web-part.bundle.js"
+    }
+  ],
+  "externals": {},
+  "localizedResources": {
+    "rotatorWebPartStrings": "webparts/rotatorWebPart/loc/{locale}.js"
+  }
+}

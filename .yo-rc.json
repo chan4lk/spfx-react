@@ -1,0 +1,8 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "libraryName": "vortex-web-parts",
+    "framework": "react",
+    "version": "1.0.0",
+    "libraryId": "3f57c58a-2c8f-4a73-a2d6-ea765332f897"
+  }
+}
