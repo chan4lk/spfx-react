@@ -1,5 +1,5 @@
 import { IRotatorItem } from '../IRotatorItem';
-import { IRotatorWebPartProps } from '../IRotatorWebPartProps'
+import { IRotatorWebPartProps } from '../IRotatorWebPartProps';
 import { IWebpartAction, LOAD, APPLY_PROPERTIES, UPDATE_PROPERTY } from '../actions/actionTypes';
 import { assign } from 'lodash';
 
@@ -35,4 +35,4 @@ export default (state = initialState, action: IWebpartAction) => {
         default:
             return state;
     }
-}
+};

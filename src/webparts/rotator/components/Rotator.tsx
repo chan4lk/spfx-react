@@ -17,17 +17,21 @@ export default class Rotator extends React.Component<IRotatorProps, void> {
       autoplay: true
     };
     return (
-      <div>
-        <Slider {...settings}>
-          {this.props.items.map((item) => {
-            return (
-              <div key={item.id} className="rotatorItem">
-                <div>{item.title}</div>
-                <img src={item.imagePath} onClick={() =>this.props.navigate(item.imagePath)}  title={item.tooltip}/>
-              </div>
-            );
-          })}
-        </Slider>
+      <div className={styles.container}>
+        {this.props.items.length &&
+          <Slider {...settings}>
+
+            {this.props.items.map((item) => {
+              return (
+                <div key={item.id} className={styles.listItem}>
+                  <div>{item.title}</div>
+                  <img src={item.imagePath} onClick={() => this.props.navigate(item.imagePath)} title={item.tooltip} />
+                </div>
+              );
+            })}
+
+          </Slider>
+        }
         <span>{this.props.caption}</span>
       </div>
     );

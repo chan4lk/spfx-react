@@ -19,12 +19,12 @@ export function applyProperties(properties: IRotatorWebPartProps) {
     return { type: APPLY_PROPERTIES, properties };
 }
 
-export function loadItems(contentType: string) {
+export function loadItems(contentType: string = 'Item') {
     return (dispatch) => {
         return new ServiceFactory()
             .getRemoteApi()
             .getItemsByContentType<ReadonlyArray<IRotatorItem>>(contentType)
-            .then((items) => {
+            .then(items => {
                 dispatch(loadItemsSuccess(items));
             }).catch(err => {
                 throw (err);

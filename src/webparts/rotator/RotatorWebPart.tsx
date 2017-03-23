@@ -11,13 +11,8 @@ import {
 } from '@microsoft/sp-webpart-base';
 import { SPComponentLoader } from '@microsoft/sp-loader';
 
-
-
 import * as strings from 'rotatorStrings';
-import Rotator from './components/Rotator';
-import { IRotatorProps } from './components/IRotatorProps';
 import { IRotatorWebPartProps } from './IRotatorWebPartProps';
-import { IRotatorItem } from './IRotatorItem';
 
 import { createStore, IState } from './store';
 import { applyProperties, updateProperty, loadItems } from './actions';
@@ -36,13 +31,13 @@ export default class RotatorWebPartWebPart extends BaseClientSideWebPart<IRotato
 }
 
   public render(): void {
-    if(this.renderdOnce) { return; }
+    if(this.renderedOnce) { return; }
 
     const element = (
       <Provider store={this.store}>
         <DefaultContainer />
       </Provider>
-    )
+    );
 
     ReactDom.render(element, this.domElement);
   }
@@ -58,11 +53,12 @@ export default class RotatorWebPartWebPart extends BaseClientSideWebPart<IRotato
   protected onPropertyChanged(propertyPath, oldValue, newValue) {
     if (!this.disableReactivePropertyChanges) {
       this.store.dispatch(updateProperty(propertyPath, newValue));
+      this.store.dispatch(loadItems(this.properties.contentType)); 
     }
   }
 
   protected onInit() {
-    this.store.dispatch(loadItems(this.properties.contentType));    
+    this.store.dispatch(loadItems());    
     this.store.dispatch(applyProperties(this.properties));
 
     return Promise.resolve(undefined);
@@ -70,6 +66,7 @@ export default class RotatorWebPartWebPart extends BaseClientSideWebPart<IRotato
 
   protected onAfterPropertyPaneChangesApplied() {
     this.store.dispatch(applyProperties(this.properties));
+    this.store.dispatch(loadItems(this.properties.contentType)); 
   }
 
   protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {

@@ -32,7 +32,8 @@ describe('Rotator container', () => {
       Rotator,
       {
         caption: 'The test rotator',
-        items: items
+        items: items,
+        navigate: () => {}
       }
     );
 
