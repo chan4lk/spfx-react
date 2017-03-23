@@ -12,7 +12,7 @@ chai.use(chaiEnzyme()); // Note the invocation at the end
 
 describe('Rotator container', () => {
   it('should render slides', () => {
-
+ 
     const items: ReadonlyArray<IRotatorItem> = [
       {
         id: 1,

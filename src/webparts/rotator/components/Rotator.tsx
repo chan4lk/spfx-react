@@ -1,12 +1,12 @@
 import * as React from 'react';
 import * as Slider from 'react-slick';
+import { escape } from '@microsoft/sp-lodash-subset';
 
 import { IRotatorItem } from '../IRotatorItem';
 import styles from './Rotator.module.scss';
 import { IRotatorProps } from './IRotatorProps';
-import { escape } from '@microsoft/sp-lodash-subset';
 
-export default class RotatorWebPart extends React.Component<IRotatorProps, void> {
+export default class Rotator extends React.Component<IRotatorProps, void> {
   public render(): React.ReactElement<IRotatorProps> {
     var settings = {
       dots: true,
@@ -23,7 +23,7 @@ export default class RotatorWebPart extends React.Component<IRotatorProps, void>
             return (
               <div key={item.id} className="rotatorItem">
                 <div>{item.title}</div>
-                <img src={item.imagePath}  title={item.tooltip}/>
+                <img src={item.imagePath} onClick={() =>this.props.navigate(item.imagePath)}  title={item.tooltip}/>
               </div>
             );
           })}

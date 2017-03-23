@@ -19,8 +19,8 @@ This package produces the following:
 
 ### Build options
 
-gulp clean
-gulp test
-gulp serve
-gulp bundle
-gulp package-solution
+* gulp clean
+* gulp test
+* gulp serve
+* gulp bundle
+* gulp package-solution --ship
