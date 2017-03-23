@@ -2,7 +2,7 @@
 import * as React from 'react';
 import { expect } from 'chai';
 import * as chaiEnzyme from 'chai-enzyme';
-import { mount, render, shallow } from 'enzyme';
+import { mount } from 'enzyme';
 
 import Rotator from '../components/Rotator';
 import { IRotatorProps } from '../components/IRotatorProps';

@@ -1,7 +1,7 @@
 import { IListApi } from './IListApi';
 import { assign } from 'lodash';
 
-const publicCdnImage = 'https://publiccdn.sharepointonline.com/netjetsdev2.sharepoint.com/11260049351da4c6291ab67dbe6fab172ecae94ab6da2b798849054944803c14eb26f874/angular.png';
+const publicCdnImage = 'https://angular.io/resources/images/logos/angular2/angular.svg';
 
 const delay = 300;
 const items = [

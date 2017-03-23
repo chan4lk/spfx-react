@@ -50,10 +50,8 @@ export default class RotatorWebPartWebPart extends BaseClientSideWebPart<IRotato
     return true;
   }
 
-  protected onPropertyChanged(propertyPath, oldValue, newValue) {
-     console.log('on change updating');
-    if (!this.disableReactivePropertyChanges) {
-      alert('updating');
+  protected onPropertyChanged(propertyPath, oldValue, newValue) {    
+    if (!this.disableReactivePropertyChanges) {    
       this.store.dispatch(updateProperty(propertyPath, newValue));
       this.store.dispatch(loadItems(this.properties.contentType)); 
     }
@@ -66,8 +64,7 @@ export default class RotatorWebPartWebPart extends BaseClientSideWebPart<IRotato
     return Promise.resolve(undefined);
   }
 
-  protected onAfterPropertyPaneChangesApplied() {
-    console.log('after updating');
+  protected onAfterPropertyPaneChangesApplied() {   
     this.store.dispatch(applyProperties(this.properties));
     this.store.dispatch(loadItems(this.properties.contentType)); 
   }
