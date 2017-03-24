@@ -23,10 +23,7 @@ export default class RotatorWebPartWebPart extends BaseClientSideWebPart<IRotato
 
   public constructor() {
     super();
-    
-    SPComponentLoader.loadCss('//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css');
-    SPComponentLoader.loadCss('//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css');
-  
+
     this.store = createStore();
 }
 
@@ -58,10 +55,14 @@ export default class RotatorWebPartWebPart extends BaseClientSideWebPart<IRotato
   }
 
   protected onInit() {
+        
+    SPComponentLoader.loadCss('//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css');
+    SPComponentLoader.loadCss('//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css');
+  
     this.store.dispatch(loadItems());    
     this.store.dispatch(applyProperties(this.properties));
 
-    return Promise.resolve(undefined);
+    return super.onInit();
   }
 
   protected onPropertyPaneConfigurationComplete() {   

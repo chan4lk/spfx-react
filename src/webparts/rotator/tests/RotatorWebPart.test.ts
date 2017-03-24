@@ -38,6 +38,8 @@ describe('Rotator container', () => {
     );
 
     const wrapper = mount(element);
+    
     expect(wrapper.html()).to.contain('Image 1');
+    expect(wrapper.html()).to.contain('Image 2');
   });
 });
