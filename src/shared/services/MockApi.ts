@@ -1,20 +1,21 @@
 import { IListApi } from './IListApi';
 import { assign } from 'lodash';
 
-const publicCdnImage = 'https://angular.io/resources/images/logos/angular2/angular.svg';
+const publicCdnImage1 = 'https://angular.io/resources/images/logos/angular2/angular.svg';
+const publicCdnImage2 = 'https://cdn.worldvectorlogo.com/logos/react.svg';
 
 const delay = 300;
 const items = [
     {
         id: 1,
-        title: 'Image 1',
-        imagePath: publicCdnImage,
+        title: 'Angular',
+        imagePath: publicCdnImage1,
         tooltip: 'Image 1\'s tool tip'
     },
     {
         id: 2,
-        title: 'Image 2',
-        imagePath: publicCdnImage,
+        title: 'React',
+        imagePath: publicCdnImage2,
         tooltip: 'Image 2\'s tool tip'
     }
 ];

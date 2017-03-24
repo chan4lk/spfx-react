@@ -1,23 +1,23 @@
 import { IRotatorItem } from '../IRotatorItem';
 import { IRotatorWebPartProps } from '../IRotatorWebPartProps';
-import { IWebpartAction, LOAD, APPLY_PROPERTIES, UPDATE_PROPERTY } from '../actions/actionTypes';
+import { IWebpartAction, LOAD, NAVIGATE, APPLY_PROPERTIES, UPDATE_PROPERTY } from '../actions/actionTypes';
 import { assign } from 'lodash';
 
 export interface IWebpartState {
     properties: IRotatorWebPartProps;
-     items: ReadonlyArray<IRotatorItem>;
+    items: ReadonlyArray<IRotatorItem>;
 }
 
 export const initialState: IWebpartState = {
     properties: {
         caption: 'Default Caption',
-        contentType: 'News',       
+        contentType: 'News',
     },
-     items: []
+    items: []
 };
 
 export default (state = initialState, action: IWebpartAction) => {
-    switch (action.type) {       
+    switch (action.type) {
         case UPDATE_PROPERTY:
             return assign({}, state, {
                 properties: assign({}, state.properties, {
@@ -30,7 +30,13 @@ export default (state = initialState, action: IWebpartAction) => {
             });
         case LOAD:
             return assign({}, state, {
-                items : action.items
+                items: action.items
+            });
+        case NAVIGATE:
+            return assign({}, state, {
+                properties: assign({}, state.properties, {
+                    caption: action.url.substring(action.url.lastIndexOf('/') + 1) + ' clicked'
+                })
             });
         default:
             return state;

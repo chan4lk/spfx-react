@@ -6,8 +6,20 @@ import styles from './Rotator.module.scss';
 import { IRotatorProps } from './IRotatorProps';
 
 export default class Rotator extends React.Component<IRotatorProps, void> {
+
+  public constructor(props){
+    super(props);
+    this.onButtonClick = this.onButtonClick.bind(this);
+  }
+
+  private onButtonClick(url:string) {
+    this.props.navigate(url);    
+    window.open(url, '_blank');
+  }
+  
   public render(): React.ReactElement<IRotatorProps> {
-    var settings = {
+    const buttonText = 'Open in New Tab';
+    const settings = {
       dots: true,
       infinite: true,
       speed: 500,
@@ -15,16 +27,21 @@ export default class Rotator extends React.Component<IRotatorProps, void> {
       slidesToScroll: 1,
       autoplay: true
     };
+
     return (
+      <div className={styles.rotator}>
       <div className={styles.container}>
         {this.props.items.length &&
           <Slider {...settings}>
 
             {this.props.items.map((item) => {
               return (
-                <div key={item.id} className={styles.listItem}>
+                <div key={item.id} className={styles.rotatorItem}>
                   <div>{escape(item.title)}</div>
-                  <img src={item.imagePath} onClick={() => this.props.navigate(item.imagePath)} title={item.tooltip} />
+                  <img src={item.imagePath}  title={item.tooltip} />
+                  <button className={styles.button} name={'button_' + item.id } onClick={() => this.onButtonClick(item.imagePath)}>
+                    <label className={styles.label}>{buttonText}</label>
+                  </button>
                 </div>
               );
             })}
@@ -32,6 +49,7 @@ export default class Rotator extends React.Component<IRotatorProps, void> {
           </Slider>
         }
         <span>{escape(this.props.caption)}</span>
+      </div>
       </div>
     );
   }
